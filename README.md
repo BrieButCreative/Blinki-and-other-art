@@ -1,3 +1,4 @@
+# Informations
 Thought as a project documentation thingy but decided to take over  
 Just some fun coding adventure im on;  
 nxc-code.py und blinki-code.py are worked on activly by me (Brie), the rest is kinda ded  
@@ -12,8 +13,8 @@ blinki-code.py is the code for the blinki-maker
   
 You should use str + F and replace 'C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\BLINKI-AND-OTHER-ART\\bitmap.nxc' with whatever directiory you want the temporary file saved in  
   
-  
-To-Do
+---
+# To-Do
 line is 'straight'  
 line differentiation left and right click (once with overwrite (line has definite color or changing))  
 ~~back a step (Liste bool array)~~  
