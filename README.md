@@ -9,8 +9,8 @@ its just something i have fun with so yeah, enjoy...
 
 
 To-Do
-line ist 'gerade'  
-line mit rechts und links unterscheiden (einmal mit overwrite (linie hat feste farbe oder wechselnde))  
+line is 'straight'  
+line differentiation left and right click (once with overwrite (line has definite color or changing))  
 ~~back a step (Liste bool array)~~      ~~forward a step (after backstep)~~  
 color change in blinki  
 copy function
@@ -21,6 +21,7 @@ Possibly make blinki-code create blinkis directly (hopefully)
 effizientere speicherung  
 Gezieltere bearbeitung (box zum bearbeiten -> Copy und paste abilty?)  
 different kinds of opening files (Image/animation)  
+
 UI;  
     * anzeigen welcher Modus (filling, line, coloring,...)  
     * ordner-Wahl  
