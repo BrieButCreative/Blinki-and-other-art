@@ -23,8 +23,8 @@ Gezieltere bearbeitung (box zum bearbeiten -> Copy und paste abilty?)
 different kinds of opening files (Image/animation)  
 
 UI;  
-    * anzeigen welcher Modus (filling, line, coloring,...)  
-    * ordner-Wahl  
+    * show which mode (filling, line, coloring,...)  
+    * choosing file  
     * size interface (for size changes)  
     * help command (nice integration)  
-    * Und color change interface  
+    * and color change interface  
