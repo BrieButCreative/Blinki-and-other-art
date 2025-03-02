@@ -11,9 +11,10 @@ its just something i have fun with so yeah, enjoy...
 To-Do
 line is 'straight'  
 line differentiation left and right click (once with overwrite (line has definite color or changing))  
-~~back a step (Liste bool array)~~      ~~forward a step (after backstep)~~  
+~~back a step (Liste bool array)~~  
+~~forward a step (after backstep)~~  
 color change in blinki  
-copy function
+copy function  
 ~~invert (inverts colors, duh)~~  
 a way to make custom lines/shapes and more shapes  
 a copy function  
