@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 from PIL import Image
 import pygame
+import numpy
 
 
 pygame.init()
-
 
 screen = pygame.display.set_mode((1000, 500))
 
@@ -27,16 +27,27 @@ class tuptomath:
         return (x, y)
 
 
-a
-image = Image.new('P', (1000, 500), (0, 0, 0))
-image2 = Image.fromarray(a)
+
+a = []
+i = 0
+j = 0
+while (i < 500):
+    b = []
+    while (j < 1000):
+        b.append((255, 255, 255))
+        j += 1
+    a.append(b)
+    j = 0
+    i += 1
+# for i in range(50, 100):
+#     for j in range(100, 200):
+#         a[j][i] = (255, 125, 42)
+a = numpy.array(a)
+
+Image.new('P', (1000, 500), (255, 125, 42)).show()
+image2 = Image.fromarray(a, 'RGB').show()
 
 
-end = True
-while (end):
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            end = False
 list = [4, 4, 4, 4]
 print(list)
 list += [5]
