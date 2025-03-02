@@ -20,7 +20,7 @@ a copy function
 Possibly make blinki-code create blinkis directly (hopefully)  
 effizientere speicherung  
 Gezieltere bearbeitung (box zum bearbeiten -> Copy und paste abilty?)  
-different kinds of opening files (Image/animation)
+different kinds of opening files (Image/animation)  
 UI;  
     * anzeigen welcher Modus (filling, line, coloring,...)  
     * ordner-Wahl  
