@@ -24,7 +24,7 @@ copy function
 ~~invert (inverts colors, duh)~~  
 a way to make custom lines/shapes and more shapes  
 a copy function  
-Possibly make blinki-code create blinkis directly (hopefully)  
+Possibly make blinki-code create blinkis directly (export as gifs, **main focus**)  
 effizientere speicherung  
 Gezieltere bearbeitung (box zum bearbeiten -> Copy und paste abilty?)  
 different kinds of opening files (Image/animation)  
