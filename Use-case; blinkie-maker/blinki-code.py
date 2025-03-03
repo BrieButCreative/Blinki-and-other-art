@@ -158,6 +158,7 @@ class Screen:
         pygame.display.update()
         count += 1
 
+
 def animate():
     global current
     global count
@@ -167,6 +168,7 @@ def animate():
         images.append(Image.open(f'{current}/frame-{n}'))
         n += 1
     images[0].save(f'{current}/final-gif.gif', save_all=True, append_images=images[1:], duration=250, loop=0)
+
 
 def fill():
     global backsteps
