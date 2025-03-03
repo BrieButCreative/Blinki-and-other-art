@@ -44,8 +44,11 @@ while (i < 500):
 #         a[j][i] = (255, 125, 42)
 a = numpy.array(a)
 
+pygame.image.save(screen, 'Testing')
 Image.new('P', (1000, 500), (255, 125, 42)).show()
 image2 = Image.fromarray(a, 'RGB').show()
+image3 = Image.open('Testing')
+image3.show()
 
 
 list = [4, 4, 4, 4]

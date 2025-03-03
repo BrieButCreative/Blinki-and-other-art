@@ -1,10 +1,12 @@
 import pygame
+import os
 import numpy
 from dataclasses import dataclass, field
 from time import sleep
 from re import search
 from typing import Optional
 from time import sleep
+from PIL import Image
 
 name = "main"
 speed = 150
@@ -19,6 +21,7 @@ colorinv = (25, 50, 25)
 screen = pygame.display.set_mode((1500, 200))
 screen.fill(colorinv)
 end = True
+count = 0
 
 @dataclass
 class tuptomath:
@@ -64,9 +67,16 @@ class Screen:
         self.__mat = numpy.zeros((150, 20))
 
     def generate(self):
-        with open("C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\BLINKI-AND-OTHER-ART\\Use-case; blinkie-maker\\blinki.txt", "w+") as file:
-            file.write(f"task {name}" + "()\n{\n while(true)\n {\n")
-            file.close()
+        global current
+        generating = True
+        n = 0
+        while (generating):
+            if (os.path.exists(f'C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\Blinki-and-other-art\\Use-case; blinkie-maker\\Blinki-{n}')):
+                n += 1
+                continue
+            os.makedirs(f'C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\Blinki-and-other-art\\Use-case; blinkie-maker\\Blinki-{n}')
+            generating = False
+            current = f'C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\Blinki-and-other-art\\Use-case; blinkie-maker\\Blinki-{n}'
 
     def matout(self) -> list[list[bool]]:
         mat = []
@@ -115,85 +125,48 @@ class Screen:
         return (out)
 
     def out(self):
-        line = 0
-        row = 0
-        with open("C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\BLINKI-AND-OTHER-ART\\Use-case; blinkie-maker\\blinki.txt", "a") as file:
-            for x in self.__mat:
-                for y in x:
-                    if (self.__mat[row, line]):
-                        file.write(f"  PointOut({row}, {line});\n")
-                    line += 1
-                row += 1
-                line = 0
-            file.write(f"  Wait({speed});\n  ClearScreen();\n")
-            file.close()
-            
+        global count
+        global current
+        global view
+        X = 0
+        Y = 0
+        while (X < 150):
+            while (Y < 20):
+                if (view.val(X, Y)):
+                    pygame.draw.line(screen, coloron, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
+                    pygame.draw.line(screen, coloron, (X * 10, Y * 10), (X * 10, Y * 10 + 9)) 
+                else:
+                    pygame.draw.line(screen, colorinv, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
+                    pygame.draw.line(screen, colorinv, (X * 10, Y * 10), (X * 10, Y * 10 + 9))
+                Y += 1
+            X += 1
+            Y = 0
+        pygame.image.save(screen, f'{current}\\frame-{count}')
+        X = 0
+        Y = 0
+        while (X < 150):
+            while (Y < 20):
+                if (view.val(X, Y)):
+                    pygame.draw.line(screen, colorinv, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
+                    pygame.draw.line(screen, colorinv, (X * 10, Y * 10), (X * 10, Y * 10 + 9))
+                else:
+                    pygame.draw.line(screen, coloron, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
+                    pygame.draw.line(screen, coloron, (X * 10, Y * 10), (X * 10, Y * 10 + 9)) 
+                Y += 1
+            X += 1
+            Y = 0
+        pygame.display.update()
+        count += 1
 
 def animate():
-    global end
-    v = view
-    v.reset()
-    setup()
-    blinki = True
-    while (blinki):
-        reading = True
-        with open(f"C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\BLINKI-AND-OTHER-ART\\Use-case; blinkie-maker\\blinki.txt", "r") as file:
-            while reading:
-                num = False
-                Xnumber = False
-                Ynumber = False
-                line = file.readline()
-                if ("PointOut(" in line):
-                    x = ""
-                    y = ""
-                    for i in line:
-                        if i == "(":
-                            Xnumber = True
-                        elif i == ",":
-                            num = True
-                            Xnumber = False
-                        elif (num):
-                            num = False
-                            Ynumber = True
-                        elif i == ")":
-                            Ynumber = False
-                        elif(Xnumber):
-                            x += i
-                        elif(Ynumber):
-                            y += i
-                    v.change(int(x), int(y))
-                elif ("Wait(" in line):
-                    X = 0
-                    Y = 0
-                    while (X < 150):
-                        while (Y < 20):
-                            if (v.val(X, Y)):
-                                pygame.draw.rect(screen, coloron, (X * 10 + 1, Y * 10 + 1, 9, 9))
-                                pygame.draw.line(screen, colorinv, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
-                                pygame.draw.line(screen, colorinv, (X * 10, Y * 10), (X * 10, Y * 10 + 9))
-                            else:
-                                pygame.draw.rect(screen, colorinv, (X * 10 + 1, Y * 10 + 1, 9, 9))
-                                pygame.draw.line(screen, coloron, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
-                                pygame.draw.line(screen, coloron, (X * 10, Y * 10), (X * 10, Y * 10 + 9)) 
-                            Y += 1
-                        X += 1
-                        Y = 0
-                    pygame.display.update()
-                    v.reset()
-                    sleep(0.15)
-                elif (not search('\S', line[:-1])):                             # type: ignore
-                    reading = False
-                for event in pygame.event.get():
-                    if event.type == pygame.QUIT:
-                        reading = False
-                        blinki = False
-                        end = False
-                    elif (event.type == pygame.KEYDOWN):
-                        if event.key == pygame.K_a:
-                            blinki = False
-                            reading = False
-    setup()
-                    
+    global current
+    global count
+    n = 0
+    images = []
+    while (n < count):
+        images.append(Image.open(f'{current}\\frame-{n}'))
+        n += 1
+    images[0].save(f'{current}\\final-gif.gif', save_all=True, append_images=images[1:], duration=250, loop=0)
 
 def fill():
     global backsteps
@@ -313,6 +286,7 @@ def line():
             if event.type == pygame.QUIT:
                 draw = False
                 end = False
+                animate()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 thirdview = Screen()
                 thirdview.matin(view.matout())
@@ -365,7 +339,7 @@ def line():
                 elif event.key == pygame.K_RETURN:
                     view.out()
                 elif event.key == pygame.K_a:
-                    animate()
+                    ... # free potential add-on is a preview and 'custom frame editor
                 elif event.key == pygame.K_f:
                     draw = False
                     fill()

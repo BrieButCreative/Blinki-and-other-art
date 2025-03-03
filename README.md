@@ -15,23 +15,24 @@ You should use str + F and replace 'C:\\Users\\volke\\Downloads\\vscode_plugin\\
   
 ---
 # To-Do
-line is 'straight'  
+line is 'straight'  **(big thing rn)**  
 line differentiation left and right click (once with overwrite (line has definite color or changing))  
 ~~back a step (Liste bool array)~~  
 ~~forward a step (after backstep)~~  
-color change in blinki  
+color change in blinki  **(big thing rn (in combination with UI))**  
 copy function  
 ~~invert (inverts colors, duh)~~  
 a way to make custom lines/shapes and more shapes  
-a copy function  
-Possibly make blinki-code create blinkis directly (export as gifs, **main focus**)  
+~~Possibly make blinki-code create blinkis directly (export as gifs)~~  
 effizientere speicherung  
 Gezieltere bearbeitung (box zum bearbeiten -> Copy und paste abilty?)  
-different kinds of opening files (Image/animation)  
+*different kinds of opening files (Image/animation)*  
+potentially single frame editing  
 
 UI;  
+    * comments in code
     * show which mode (filling, line, coloring,...)  
     * choosing file  
     * size interface (for size changes)  
-    * help command (nice integration)  
+    * help command (nice integration)  **(big thing rn)**  
     * and color change interface  
