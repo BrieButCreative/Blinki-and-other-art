@@ -15,24 +15,24 @@ You should use str + F and replace 'C:\\Users\\volke\\Downloads\\vscode_plugin\\
   
 ---
 # To-Do
-line is 'straight'  **(big thing rn)**  
-line differentiation left and right click (once with overwrite (line has definite color or changing))  
-~~back a step (Liste bool array)~~  
-~~forward a step (after backstep)~~  
-color change in blinki  **(big thing rn (in combination with UI))**  
-copy function  
-~~invert (inverts colors, duh)~~  
-a way to make custom lines/shapes and more shapes  
-~~Possibly make blinki-code create blinkis directly (export as gifs)~~  
-effizientere speicherung  
-Gezieltere bearbeitung (box zum bearbeiten -> Copy und paste abilty?)  
-*different kinds of opening files (Image/animation)*  
-potentially single frame editing  
+[all] line is 'straight'  **(big thing rn)**  
+[all] line differentiation left and right click (once with overwrite (line has definite color or changing))  
+~~[all] back a step (Liste bool array)~~  
+~~[all] forward a step (after backstep)~~  
+[blinki] color change in blinki  **(big thing rn (in combination with UI))**  
+[all] copy function  
+~~[all] invert (inverts colors, duh)~~  
+[nxc(all)] a way to make custom lines/shapes and more shapes  
+~~[blinki] Possibly make blinki-code create blinkis directly (export as gifs)~~  
+[nxc] effizientere speicherung  
+[nxc(all)] Gezieltere bearbeitung (box zum bearbeiten -> Copy und paste abilty?)  
+*[blinki(all)] different kinds of opening files (Image/animation)*  
+[blinki(all)] potentially single frame editing  
 
 UI;  
-    * comments in code
-    * show which mode (filling, line, coloring,...)  
-    * choosing file  
-    * size interface (for size changes)  
-    * help command (nice integration)  **(big thing rn)**  
-    * and color change interface  
+    * [all] comments in code
+    * [all] show which mode (filling, line, coloring,...)  
+    * [all(nxc)] choosing file  
+    * [nxc] size interface (for size changes)  
+    * [all] help command (nice integration)  **(big thing rn)**  
+    * [blinki] and color change interface  
