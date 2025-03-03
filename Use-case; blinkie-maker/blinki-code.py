@@ -3,7 +3,7 @@ import os
 import numpy
 from dataclasses import dataclass, field
 from typing import Optional
-from PIL import Image
+from PIL import Image, ImageOps
 
 name = "main"
 speed = 150
@@ -139,6 +139,9 @@ class Screen:
             X += 1
             Y = 0
         pygame.image.save(screen, f'{current}/frame-{count}')
+        with Image.open(f'{current}/frame-{count}') as im:
+            ImageOps.fit(im, (150, 20)).save(f'{current}/frame-{count}.jpg')
+        os.remove(f'{current}/frame-{count}')
         X = 0
         Y = 0
         while (X < 150):
@@ -162,7 +165,7 @@ def animate():
     n = 0
     images = []
     while (n < count):
-        images.append(Image.open(f'{current}/frame-{n}'))
+        images.append(Image.open(f'{current}/frame-{n}.jpg'))
         n += 1
     images[0].save(f'{current}/final-gif.gif', save_all=True, append_images=images[1:], duration=speed, loop=0)
 
