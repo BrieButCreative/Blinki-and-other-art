@@ -214,7 +214,7 @@ def fill():
                 elif event.key == pygame.K_RETURN:
                     view.out()
                 elif event.key == pygame.K_a:
-                    animate()
+                    ...
                 elif event.key == pygame.K_l:
                     line()
                     fill = False
@@ -286,7 +286,6 @@ def line():
             if event.type == pygame.QUIT:
                 draw = False
                 end = False
-                animate()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 thirdview = Screen()
                 thirdview.matin(view.matout())
@@ -339,7 +338,7 @@ def line():
                 elif event.key == pygame.K_RETURN:
                     view.out()
                 elif event.key == pygame.K_a:
-                    ... # free potential add-on is a preview and 'custom frame editor
+                    ...
                 elif event.key == pygame.K_f:
                     draw = False
                     fill()
@@ -550,7 +549,6 @@ foresteps = ['Empty']
 while (end):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            open("C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/BLINKI-AND-OTHER-ART/bitmap.nxc", "a").write(" }\n}")
             end = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
             check = pygame.mouse.get_pressed()
@@ -581,7 +579,7 @@ while (end):
             elif event.key == pygame.K_RETURN:
                 view.out()
             elif event.key == pygame.K_a:
-                animate()
+                ... # free potential add-on is a preview and 'custom frame editor
             elif event.key == pygame.K_f:
                 fill()
             elif event.key == pygame.K_c:
@@ -600,5 +598,6 @@ while (end):
                 foresteps = ['Empty']
 
 
+animate()
 pygame.time.Clock().tick(1080)
 pygame.quit()
