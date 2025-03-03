@@ -15,6 +15,7 @@ You should use str + F and replace 'C:\\Users\\volke\\Downloads\\vscode_plugin\\
   
 ---
 # To-Do
+**[important] update path in blinki so its not my specific path!!!**
 [all] line is 'straight'  **(big thing rn)**  
 [all] line differentiation left and right click (once with overwrite (line has definite color or changing))  
 ~~[all] back a step (Liste bool array)~~  
