@@ -2,10 +2,7 @@ import pygame
 import os
 import numpy
 from dataclasses import dataclass, field
-from time import sleep
-from re import search
 from typing import Optional
-from time import sleep
 from PIL import Image
 
 name = "main"
@@ -167,7 +164,7 @@ def animate():
     while (n < count):
         images.append(Image.open(f'{current}/frame-{n}'))
         n += 1
-    images[0].save(f'{current}/final-gif.gif', save_all=True, append_images=images[1:], duration=250, loop=0)
+    images[0].save(f'{current}/final-gif.gif', save_all=True, append_images=images[1:], duration=speed, loop=0)
 
 
 def fill():
