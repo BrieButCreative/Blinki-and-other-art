@@ -71,12 +71,12 @@ class Screen:
         generating = True
         n = 0
         while (generating):
-            if (os.path.exists(f'C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\Blinki-and-other-art\\Use-case; blinkie-maker\\Blinki-{n}')):
+            if (os.path.exists(f'C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/Blinki-and-other-art/Use-case; blinkie-maker/Blinki-{n}')):
                 n += 1
                 continue
-            os.makedirs(f'C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\Blinki-and-other-art\\Use-case; blinkie-maker\\Blinki-{n}')
+            os.makedirs(f'C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/Blinki-and-other-art/Use-case; blinkie-maker/Blinki-{n}')
             generating = False
-            current = f'C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\Blinki-and-other-art\\Use-case; blinkie-maker\\Blinki-{n}'
+            current = f'C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/Blinki-and-other-art/Use-case; blinkie-maker/Blinki-{n}'
 
     def matout(self) -> list[list[bool]]:
         mat = []
@@ -141,7 +141,7 @@ class Screen:
                 Y += 1
             X += 1
             Y = 0
-        pygame.image.save(screen, f'{current}\\frame-{count}')
+        pygame.image.save(screen, f'{current}/frame-{count}')
         X = 0
         Y = 0
         while (X < 150):
@@ -164,9 +164,9 @@ def animate():
     n = 0
     images = []
     while (n < count):
-        images.append(Image.open(f'{current}\\frame-{n}'))
+        images.append(Image.open(f'{current}/frame-{n}'))
         n += 1
-    images[0].save(f'{current}\\final-gif.gif', save_all=True, append_images=images[1:], duration=250, loop=0)
+    images[0].save(f'{current}/final-gif.gif', save_all=True, append_images=images[1:], duration=250, loop=0)
 
 def fill():
     global backsteps
@@ -550,7 +550,7 @@ foresteps = ['Empty']
 while (end):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            open("C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\BLINKI-AND-OTHER-ART\\bitmap.nxc", "a").write(" }\n}")
+            open("C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/BLINKI-AND-OTHER-ART/bitmap.nxc", "a").write(" }\n}")
             end = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
             check = pygame.mouse.get_pressed()

@@ -76,7 +76,7 @@ class Screen:
         self.__mat = numpy.zeros((xsize, ysize))                 # type: ignore
 
     def generate(self):
-        with open("C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\BLINKI-AND-OTHER-ART\\bitmap.nxc", "w+") as file:
+        with open("C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/BLINKI-AND-OTHER-ART/bitmap.nxc", "w+") as file:
             file.write(f"task {name}" + "()\n{\n while(true)\n {\n")
             file.close()
 
@@ -129,7 +129,7 @@ class Screen:
     def out(self):
         line = 0
         row = 0
-        with open("C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\BLINKI-AND-OTHER-ART\\bitmap.nxc", "a") as file:
+        with open("C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/BLINKI-AND-OTHER-ART/bitmap.nxc", "a") as file:
             for x in self.__mat:
                 for y in x:
                     if (self.__mat[row, line]):
@@ -146,7 +146,7 @@ def animate():
     reading = True
     v.reset()
     setup()
-    with open(f"C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\BLINKI-AND-OTHER-ART\\bitmap.nxc", "r") as file:
+    with open(f"C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/BLINKI-AND-OTHER-ART/bitmap.nxc", "r") as file:
         while reading:
             num = False
             Xnumber = False
@@ -571,7 +571,7 @@ foresteps = ['Empty']
 while (end):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            open("C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\BLINKI-AND-OTHER-ART\\bitmap.nxc", "a").write(" }\n}")
+            open("C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/BLINKI-AND-OTHER-ART/bitmap.nxc", "a").write(" }\n}")
             end = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
             check = pygame.mouse.get_pressed()
