@@ -11,11 +11,9 @@ its just something i have fun with so yeah, enjoy...
 nxc-code.py is the code for the nxc-drawer  
 blinki-code.py is the code for the blinki-maker  
   
-You should use str + F and replace 'C:\\Users\\volke\\Downloads\\vscode_plugin\\vscode_plugin\\BLINKI-AND-OTHER-ART\\bitmap.nxc' with whatever directiory you want the temporary file saved in  
-  
 ---
 # To-Do
-**[important] update path in blinki so its not my specific path!!!**  
+~~**[important] update path in blinki so its not my specific path!!!**~~  
 [all] line is 'straight'  **(big thing rn)**  
 [all] line differentiation left and right click (once with overwrite (line has definite color or changing))  
 ~~[all] back a step (Liste bool array)~~  
