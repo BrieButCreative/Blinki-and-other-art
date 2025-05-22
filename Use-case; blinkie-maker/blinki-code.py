@@ -20,6 +20,9 @@ screen.fill(colorinv)
 end = True
 count = 0
 
+filepath = os.path.dirname(os.path.realpath(__file__))
+
+
 @dataclass
 class tuptomath:
     tupel: tuple[int, int]
@@ -43,11 +46,11 @@ class tuptomath:
             else:
                 y = num * int
         return ((x, y))                 # type: ignore
-    
+
     def untupl(self) -> int:            # type: ignore
         for x in self.tupel:
             return (x)
-    
+
     def untupr(self) -> int:            # type: ignore
         n = 0
         for x in self.tupel:
@@ -68,12 +71,13 @@ class Screen:
         generating = True
         n = 0
         while (generating):
-            if (os.path.exists(f'C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/Blinki-and-other-art/Use-case; blinkie-maker/Blinki-{n}')):
+            if (os.path.exists(f'{filepath}/Blinki-{n}')):
                 n += 1
                 continue
-            os.makedirs(f'C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/Blinki-and-other-art/Use-case; blinkie-maker/Blinki-{n}')
+            os.makedirs(f'{filepath}/Blinki-{n}')
             generating = False
-            current = f'C:/Users/volke/Downloads/vscode_plugin/vscode_plugin/Blinki-and-other-art/Use-case; blinkie-maker/Blinki-{n}'
+            current = f'{filepath}/Blinki-{
+                n}'
 
     def matout(self) -> list[list[bool]]:
         mat = []
@@ -98,17 +102,17 @@ class Screen:
             ycord += 1
 
     def val(self, x: int, y: int) -> bool:
-        return(bool(self.__mat[x, y]))
+        return (bool(self.__mat[x, y]))
 
     def change(self, x: int, y: int):
-        if(int(self.__mat[x, y])):
+        if (int(self.__mat[x, y])):
             self.__mat[x, y] = False
         else:
             self.__mat[x, y] = True
 
     def reset(self):
-        self.__mat = numpy.zeros((150,20))
-    
+        self.__mat = numpy.zeros((150, 20))
+
     def differ(self, matrix: list[list[bool]]) -> list[tuple[int, int]]:
         y = 0
         out = []
@@ -130,11 +134,15 @@ class Screen:
         while (X < 150):
             while (Y < 20):
                 if (view.val(X, Y)):
-                    pygame.draw.line(screen, coloron, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
-                    pygame.draw.line(screen, coloron, (X * 10, Y * 10), (X * 10, Y * 10 + 9)) 
+                    pygame.draw.line(
+                        screen, coloron, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
+                    pygame.draw.line(
+                        screen, coloron, (X * 10, Y * 10), (X * 10, Y * 10 + 9))
                 else:
-                    pygame.draw.line(screen, colorinv, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
-                    pygame.draw.line(screen, colorinv, (X * 10, Y * 10), (X * 10, Y * 10 + 9))
+                    pygame.draw.line(screen, colorinv,
+                                     (X * 10, Y * 10), (X * 10 + 9, Y * 10))
+                    pygame.draw.line(screen, colorinv,
+                                     (X * 10, Y * 10), (X * 10, Y * 10 + 9))
                 Y += 1
             X += 1
             Y = 0
@@ -147,11 +155,15 @@ class Screen:
         while (X < 150):
             while (Y < 20):
                 if (view.val(X, Y)):
-                    pygame.draw.line(screen, colorinv, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
-                    pygame.draw.line(screen, colorinv, (X * 10, Y * 10), (X * 10, Y * 10 + 9))
+                    pygame.draw.line(screen, colorinv,
+                                     (X * 10, Y * 10), (X * 10 + 9, Y * 10))
+                    pygame.draw.line(screen, colorinv,
+                                     (X * 10, Y * 10), (X * 10, Y * 10 + 9))
                 else:
-                    pygame.draw.line(screen, coloron, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
-                    pygame.draw.line(screen, coloron, (X * 10, Y * 10), (X * 10, Y * 10 + 9)) 
+                    pygame.draw.line(
+                        screen, coloron, (X * 10, Y * 10), (X * 10 + 9, Y * 10))
+                    pygame.draw.line(
+                        screen, coloron, (X * 10, Y * 10), (X * 10, Y * 10 + 9))
                 Y += 1
             X += 1
             Y = 0
@@ -167,7 +179,8 @@ def animate():
     while (n < count):
         images.append(Image.open(f'{current}/frame-{n}.jpg'))
         n += 1
-    images[0].save(f'{current}/final-gif.gif', save_all=True, append_images=images[1:], duration=speed, loop=0)
+    images[0].save(f'{current}/final-gif.gif', save_all=True,
+                   append_images=images[1:], duration=speed, loop=0)
 
 
 def fill():
@@ -371,8 +384,10 @@ def closest(begin: tuple[int, int], end: tuple[int, int]) -> list[tuple[int, int
         lineage = False
     while (lineage):
         shortest = min(dist(testcordx + 1, testcordy, endx, endy), dist(testcordx, testcordy + 1, endx, endy),
-                       dist(testcordx, testcordy - 1, endx, endy), dist(testcordx - 1, testcordy, endx, endy),
-                       dist(testcordx + 1, testcordy + 1, endx, endy), dist(testcordx - 1, testcordy - 1, endx, endy),
+                       dist(testcordx, testcordy - 1, endx,
+                            endy), dist(testcordx - 1, testcordy, endx, endy),
+                       dist(testcordx + 1, testcordy + 1, endx,
+                            endy), dist(testcordx - 1, testcordy - 1, endx, endy),
                        dist(testcordx + 1, testcordy - 1, endx, endy), dist(testcordx - 1, testcordy + 1, endx, endy))
         if (dist(testcordx - 1, testcordy - 1, endx, endy) == shortest):
             testcordx -= 1
@@ -382,7 +397,7 @@ def closest(begin: tuple[int, int], end: tuple[int, int]) -> list[tuple[int, int
                 ret += [(testcordx * 10, (testcordy + 1) * 10)]
             else:
                 ret += [((testcordx + 1) * 10, testcordy * 10)]
-        elif(dist(testcordx + 1, testcordy + 1, endx, endy) == shortest):
+        elif (dist(testcordx + 1, testcordy + 1, endx, endy) == shortest):
             testcordx += 1
             testcordy += 1
             ret += [(testcordx * 10, testcordy * 10)]
@@ -390,7 +405,7 @@ def closest(begin: tuple[int, int], end: tuple[int, int]) -> list[tuple[int, int
                 ret += [(testcordx * 10, (testcordy - 1) * 10)]
             else:
                 ret += [((testcordx - 1) * 10, testcordy * 10)]
-        elif(dist(testcordx + 1, testcordy - 1, endx, endy) == shortest):
+        elif (dist(testcordx + 1, testcordy - 1, endx, endy) == shortest):
             testcordx += 1
             testcordy -= 1
             ret += [(testcordx * 10, testcordy * 10)]
@@ -398,7 +413,7 @@ def closest(begin: tuple[int, int], end: tuple[int, int]) -> list[tuple[int, int
                 ret += [(testcordx * 10, (testcordy + 1) * 10)]
             else:
                 ret += [((testcordx - 1) * 10, testcordy * 10)]
-        elif(dist(testcordx - 1, testcordy + 1, endx, endy) == shortest):
+        elif (dist(testcordx - 1, testcordy + 1, endx, endy) == shortest):
             testcordx -= 1
             testcordy += 1
             ret += [(testcordx * 10, testcordy * 10)]
@@ -482,7 +497,7 @@ def setup():
     x = 0
     y = 0
     while (x < 1500):
-        pygame.draw.line(screen, coloron, (x, 0), (x, 200))  
+        pygame.draw.line(screen, coloron, (x, 0), (x, 200))
         pygame.draw.line(screen, coloron, (0, y), (1500, y))
         x += 10
         y += 10
@@ -506,14 +521,18 @@ def color(pos: tuple[int, int], vie: Optional[Screen] = None) -> Screen:
         Y = y // 10
         rectX = X * 10
         rectY = Y * 10
-        if(view.val(X, Y)):
+        if (view.val(X, Y)):
             pygame.draw.rect(screen, colorinv, (rectX, rectY, 10, 10))
-            pygame.draw.line(screen, coloron, (rectX, rectY), (rectX + 9, rectY))
-            pygame.draw.line(screen, coloron, (rectX, rectY), (rectX, rectY + 9))
+            pygame.draw.line(screen, coloron, (rectX, rectY),
+                             (rectX + 9, rectY))
+            pygame.draw.line(screen, coloron, (rectX, rectY),
+                             (rectX, rectY + 9))
         else:
             pygame.draw.rect(screen, coloron, (rectX, rectY, 10, 10))
-            pygame.draw.line(screen, colorinv, (rectX, rectY), (rectX + 9, rectY))
-            pygame.draw.line(screen, colorinv, (rectX, rectY), (rectX, rectY + 9))
+            pygame.draw.line(screen, colorinv, (rectX, rectY),
+                             (rectX + 9, rectY))
+            pygame.draw.line(screen, colorinv, (rectX, rectY),
+                             (rectX, rectY + 9))
         view.change(X, Y)
         pygame.display.update()
         return (view)
@@ -529,18 +548,21 @@ def color(pos: tuple[int, int], vie: Optional[Screen] = None) -> Screen:
         Y = y // 10
         rectX = X * 10
         rectY = Y * 10
-        if(vie.val(X, Y)):
+        if (vie.val(X, Y)):
             pygame.draw.rect(screen, colorinv, (rectX, rectY, 10, 10))
-            pygame.draw.line(screen, coloron, (rectX, rectY), (rectX + 9, rectY))
-            pygame.draw.line(screen, coloron, (rectX, rectY), (rectX, rectY + 9))
+            pygame.draw.line(screen, coloron, (rectX, rectY),
+                             (rectX + 9, rectY))
+            pygame.draw.line(screen, coloron, (rectX, rectY),
+                             (rectX, rectY + 9))
         else:
             pygame.draw.rect(screen, coloron, (rectX, rectY, 10, 10))
-            pygame.draw.line(screen, colorinv, (rectX, rectY), (rectX + 9, rectY))
-            pygame.draw.line(screen, colorinv, (rectX, rectY), (rectX, rectY + 9))
+            pygame.draw.line(screen, colorinv, (rectX, rectY),
+                             (rectX + 9, rectY))
+            pygame.draw.line(screen, colorinv, (rectX, rectY),
+                             (rectX, rectY + 9))
         vie.change(X, Y)
         pygame.display.update()
         return (vie)
-
 
 
 setup()
@@ -561,7 +583,8 @@ while (end):
                     yes = True
                 n = 1
             if (yes):
-                base = view.val(tuptomath(pygame.mouse.get_pos()).untupl() // 10, tuptomath(pygame.mouse.get_pos()).untupr() // 10)
+                base = view.val(tuptomath(pygame.mouse.get_pos()).untupl(
+                ) // 10, tuptomath(pygame.mouse.get_pos()).untupr() // 10)
                 wait = True
                 pos = (-1, -1)
                 while (wait):
@@ -581,7 +604,7 @@ while (end):
             elif event.key == pygame.K_RETURN:
                 view.out()
             elif event.key == pygame.K_a:
-                ... # free potential add-on is a preview and 'custom frame editor
+                ...  # free potential add-on is a preview and 'custom frame editor
             elif event.key == pygame.K_f:
                 fill()
             elif event.key == pygame.K_c:
